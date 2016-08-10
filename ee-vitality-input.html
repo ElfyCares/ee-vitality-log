@@ -1,0 +1,85 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+
+<link rel="import" href="ee-vitality-simple-input.html">
+<!--
+An element providing a solution to no problem in particular.
+
+Example:
+
+    <ee-vitality-input></ee-vitality-input>
+
+Example:
+
+    <ee-vitality-input>
+    </ee-vitality-input>
+
+@demo demo/index.html
+@hero hero.svg
+-->
+<dom-module id="ee-vitality-input">
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+      }
+
+    </style>
+
+    <template is="dom-if" if="[[bloodPressure]]">
+      <ee-vitality-simple-input
+        value="{{bloodPressureValue}}"
+        max="300"
+        unit="mmHg">
+      </ee-vitality-simple-input>
+    </template>
+
+    <template is="dom-if" if="[[heartRate]]">
+      <ee-vitality-simple-input
+        icon="icons:timeline"
+        value="{{heartRateValue}}"
+        unit="BPM">
+      </ee-vitality-simple-input>
+    </template>
+
+    <template is="dom-if" if="[[glucose]]">
+      <ee-vitality-simple-input
+        value="{{glucoseValue}}"
+        icon="icons:invert-colors"
+        unit="mmol/L">
+      </ee-vitality-simple-input>
+    </template>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'ee-vitality-input',
+
+      properties: {
+
+        bloodPressure: {
+          type: Boolean,
+          value: false,
+          notify: true,
+        },
+
+        heartRate: {
+          type: Boolean,
+          value: false,
+          notify: true,
+        },
+
+        glucose: {
+          type: Boolean,
+          value: false,
+          notify: true,
+        },
+      },
+
+    });
+  </script>
+</dom-module>

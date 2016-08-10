@@ -1,0 +1,113 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+
+
+<dom-module id="ee-vitality-simple-input">
+  <template>
+    <style>
+      :host {
+        display: block;
+        box-sizing: border-box;
+      }
+
+      .horizontal {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+      }
+
+      .c {
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .unit {
+        font-size: var(--ee-vitality-input-font-size, 24px);
+      }
+
+      .input {
+        --paper-input-container-input: {
+          font-size: var(--ee-vitality-input-font-size, 24px);
+        };
+      }
+
+    </style>
+
+    <div class="horizontal c">
+      <paper-input class="input"
+        max="[[max]]"
+        min="[[min]]"
+        type="[[inputType]]"
+        allowed-pattern="[[allowedPattern]]"
+        label="" value="{{value}}">
+        <iron-icon icon$="[[icon]]" prefix></iron-icon>
+        <div suffix class="unit">[[unit]]</div>
+      </paper-input>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'ee-vitality-simple-input',
+
+      properties: {
+        unit: {
+          type: String,
+          value: '',
+          notify: true,
+        },
+
+        label: {
+          type: String,
+          value: '',
+          notify: true
+        },
+
+        value: {
+          type: String,
+          value: '',
+          notify: true
+        },
+
+        inputType: {
+          type: String,
+          value: 'number',
+          notify: true
+        },
+
+        allowedPattern: {
+          type: String,
+          value: '',
+          notify: true
+        },
+
+        max: {
+          type: String,
+          value: '',
+          notify: true
+        },
+
+        min: {
+          type: String,
+          value: '',
+          notify: true
+        },
+
+        icon: {
+          type: String,
+          value: 'icons:favorite'
+        },
+
+      },
+
+    });
+  </script>
+</dom-module>
