@@ -1,6 +1,6 @@
 {
-  "name": "ee-vitality-input",
-  "version": "1.0.7",
+  "name": "ee-vitality-log",
+  "version": "1.0.0",
   "authors": [
     "Anonymous <anonymous@example.com>"
   ],
@@ -10,7 +10,7 @@
     "polymer",
     "seed"
   ],
-  "main": "ee-vitality-input.html",
+  "main": "ee-vitality-log.html",
   "license": "http://polymer.github.io/LICENSE.txt",
   "homepage": "https://github.com/<USERNAME>/seed-element/",
   "ignore": [
