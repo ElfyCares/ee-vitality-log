@@ -17,26 +17,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <script src="../../web-component-tester/browser.js"></script>
 
     <!-- Step 1: import the element to test -->
-    <link rel="import" href="../ee-vitality-input.html">
+    <link rel="import" href="../ee-vitality-log.html">
   </head>
   <body>
 
     <!-- You can use the document as a place to set up your fixtures. -->
-    <test-fixture id="ee-vitality-input-fixture">
+    <test-fixture id="ee-vitality-log-fixture">
       <template>
-        <ee-vitality-input>
-          <h2>ee-vitality-input</h2>
-        </ee-vitality-input>
+        <ee-vitality-log>
+          <h2>ee-vitality-log</h2>
+        </ee-vitality-log>
       </template>
     </test-fixture>
 
     <script>
-      suite('<ee-vitality-input>', function() {
+      suite('<ee-vitality-log>', function() {
 
         var myEl;
 
         setup(function() {
-          myEl = fixture('ee-vitality-input-fixture');
+          myEl = fixture('ee-vitality-log-fixture');
         });
 
         test('defines the "author" property', function() {
@@ -45,14 +45,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         });
 
         test('says hello', function() {
-          assert.equal(myEl.sayHello(), 'ee-vitality-input says, Hello World!');
+          assert.equal(myEl.sayHello(), 'ee-vitality-log says, Hello World!');
 
           var greetings = myEl.sayHello('greetings Earthlings');
-          assert.equal(greetings, 'ee-vitality-input says, greetings Earthlings');
+          assert.equal(greetings, 'ee-vitality-log says, greetings Earthlings');
         });
 
         test('fires lasers', function(done) {
-          myEl.addEventListener('ee-vitality-input-lasers', function(event) {
+          myEl.addEventListener('ee-vitality-log-lasers', function(event) {
             assert.equal(event.detail.sound, 'Pew pew!');
             done();
           });
